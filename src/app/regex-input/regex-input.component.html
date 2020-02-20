@@ -1,3 +1,7 @@
 <form [formGroup]="regexForm" (ngSubmit)="onSubmit()">
-<input type="text" formControlName="regexValue" (keyup)="sendRegexString($event.target.value)"/>
+<input type="text" formControlName="regexValue" (keyup)="sendRegexString($event.target.value)" pattern />
+<div>Enter a valid Expression</div>
+ <div *ngIf="!regexForm.controls['regexValue'].valid && regexForm.controls['regexValue'].touched">
+        Enter a valid Expression
+      </div>
 </form>
