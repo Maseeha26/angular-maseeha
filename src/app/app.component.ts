@@ -26,21 +26,21 @@ export class AppComponent {
   getMatchedValue() {
     debugger;
     try {
-      // let matched = this.receivedStringMessage.match(this.receivedRegexMessage);
-      // alert(matched)
-      while (
-        (this.stringValue = this.receivedRegexMessage.exec(
-          this.receivedStringMessage
-        )) !== null
-      ) {
-        if (this.stringValue.index === this.receivedRegexMessage.lastIndex) {
-          this.receivedRegexMessage.lastIndex++;
-        }
-        // The result can be accessed through the `m`-variable.
-        this.stringValue.forEach((match, groupIndex) => {
-          console.log(`Found match, group ${groupIndex}: ${match}`);
-        });
-      }
+      let matched = this.receivedStringMessage.match(this.receivedRegexMessage);
+      alert(matched)
+      // while (
+      //   (this.stringValue = this.receivedRegexMessage.exec(
+      //     this.receivedStringMessage
+      //   )) !== null
+      // ) {
+      //   if (this.stringValue.index === this.receivedRegexMessage.lastIndex) {
+      //     this.receivedRegexMessage.lastIndex++;
+      //   }
+      //   // The result can be accessed through the `m`-variable.
+      //   this.stringValue.forEach((match, groupIndex) => {
+      //     console.log(`Found match, group ${groupIndex}: ${match}`);
+      //   });
+      // }
       this.isMatched = "Matched";
     } catch (Exception) {
       this.isMatched = "Not Matched";
