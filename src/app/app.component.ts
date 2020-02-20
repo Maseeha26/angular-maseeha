@@ -6,10 +6,11 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  receivedRegexMessage: string;
+  receivedRegexMessage: any;
   receivedStringMessage: any;
   isMatched: string;
-  constructor() { }
+  stringValue: any;
+  constructor() {}
 
   getregexEmit(message: string) {
     this.receivedRegexMessage = message;
@@ -25,12 +26,24 @@ export class AppComponent {
   getMatchedValue() {
     debugger;
     try {
-    let matched = this.receivedStringMessage.match(this.receivedRegexMessage);
-    alert(matched)
-    this.isMatched = "Matched";
-    }
-    catch (Exception) {
+      // let matched = this.receivedStringMessage.match(this.receivedRegexMessage);
+      // alert(matched)
+      while (
+        (this.stringValue = this.receivedRegexMessage.exec(
+          this.receivedStringMessage
+        )) !== null
+      ) {
+        if (this.stringValue.index === this.receivedRegexMessage.lastIndex) {
+          this.receivedRegexMessage.lastIndex++;
+        }
+        // The result can be accessed through the `m`-variable.
+        this.stringValue.forEach((match, groupIndex) => {
+          console.log(`Found match, group ${groupIndex}: ${match}`);
+        });
+      }
+      this.isMatched = "Matched";
+    } catch (Exception) {
       this.isMatched = "Not Matched";
-    }  
+    }
   }
 }
