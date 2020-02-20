@@ -1,0 +1,3 @@
+<form [formGroup]="regexForm" (ngSubmit)="onSubmit()">
+<input type="text" formControlName="regexValue" (keyup)="sendRegexString($event.target.value)"/>
+</form>
