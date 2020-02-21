@@ -14,25 +14,32 @@ export class AppComponent {
 
   getregexEmit(message: string) {
     this.receivedRegexMessage = message;
+    console.log(message);
     this.getMatchedValue();
   }
 
   getstringEmit(message: string) {
     this.receivedStringMessage = message;
+    console.log(message);
     this.getMatchedValue();
   }
 
   getMatchedValue() {
-    if (this.receivedRegexMessage) {
-      let params = this.receivedRegexMessage.split('/')
-      let regex = new RegExp(params[1], params[2]);
-      this.matched = this.receivedStringMessage.match(regex);
-      if (this.matched) {
-        this.isMatched = "Matched";
-      } else {
-        this.isMatched = "Not Matched";
+    try {
+      if (this.receivedRegexMessage) {
+        let params = this.receivedRegexMessage.split('/')
+        let regex = new RegExp(params[1], params[2]);
+        this.matched = this.receivedStringMessage.match(regex);
+        if (this.matched) {
+          this.isMatched = "Matched";
+        } else {
+          this.isMatched = "Not Matched";
+        }
       }
     }
-
+    catch (ex) {
+      console.log(ex);
+      this.isMatched = "Not Matched";
+    }
   }
 }

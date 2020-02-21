@@ -16,7 +16,7 @@ export class StringInputComponent implements OnInit {
 
   ngOnInit() {
       this.stringForm = this.fb.group({
-      stringValue: ['', Validators.required]
+      stringValue: [this.message, Validators.required]
     });
     this.stringEmit.emit(this.message);
   }
