@@ -9,7 +9,6 @@ export class AppComponent {
   receivedRegexMessage: string;
   receivedStringMessage: any;
   isMatched: string;
-  stringValue: any;
   matched: string;
   constructor() { }
 
