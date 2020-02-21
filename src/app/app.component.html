@@ -2,10 +2,10 @@
 	<h1>Find Regex Value</h1>
 	<app-regex-input (regexEmit)="getregexEmit($event)"></app-regex-input>
 	<app-string-input (stringEmit)="getstringEmit($event)"></app-string-input>
-	<div>
+	<div class="format">
 		Did the expression match? {{isMatched}}
 	</div>
-	<div>
+	<div class="format">
 		Matched Values are : <mark>{{matched}}</mark>
 	</div>
 </div>

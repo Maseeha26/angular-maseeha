@@ -1,4 +1,4 @@
-<form [formGroup]="regexForm">
+<form [formGroup]="regexForm" class="format">
 	<div class="label-class"><label>Enter a Regex Value</label></div>
 	<input type="text" formControlName="regexValue" (keyup)="sendRegexString($event.target.value)" pattern />
 	<div class="danger-class"
