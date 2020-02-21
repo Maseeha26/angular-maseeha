@@ -1,5 +1,5 @@
 <form [formGroup]="regexForm" class="format">
-	<input type="text" placeholder="Enter a Regex Expression" formControlName="regexValue" (keyup)="sendRegexString($event.target.value)" pattern />
+	<input type="text"  placeholder="Enter a Regex Expression" formControlName="regexValue" (keyup)="sendRegexString($event.target.value)" pattern />
 	<div class="danger-class"
 		*ngIf="!regexForm.controls['regexValue'].valid && regexForm.controls['regexValue'].touched">
 		Enter a valid Expression
