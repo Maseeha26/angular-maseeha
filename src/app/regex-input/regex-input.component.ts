@@ -14,7 +14,7 @@ export class RegexInputComponent implements OnInit {
   @Output() regexEmit = new EventEmitter();
   ngOnInit() {
     this.regexForm = this.fb.group({
-      regexValue: ['', Validators.pattern(this.inputPattern)]
+      regexValue: ['', Validators.required]
     });
   }
 
