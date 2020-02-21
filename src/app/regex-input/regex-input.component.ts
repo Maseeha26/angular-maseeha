@@ -20,7 +20,6 @@ export class RegexInputComponent implements OnInit {
 
   sendRegexString(message: string) {
     this.inputPattern = this.regexEmit.emit(message);
-    console.log( this.inputPattern );
   }
 
 }
