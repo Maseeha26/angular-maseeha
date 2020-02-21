@@ -9,16 +9,18 @@ import { Validators } from '@angular/forms';
 })
 export class RegexInputComponent implements OnInit {
   regexForm: FormGroup;
+  inputPattern: any;
   constructor(private fb: FormBuilder) { }
   @Output() regexEmit = new EventEmitter();
   ngOnInit() {
     this.regexForm = this.fb.group({
-      regexValue: ['', Validators.required]
+      regexValue: ['', Validators.required, Validators.pattern(this.inputPattern)]
     });
   }
 
   sendRegexString(message: string) {
-    this.regexEmit.emit(message);
+    this.inputPattern = this.regexEmit.emit(message);
+    console.log( this.inputPattern );
   }
 
 }
