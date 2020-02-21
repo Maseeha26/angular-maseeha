@@ -1,5 +1,11 @@
-
-<app-regex-input (regexEmit)="getregexEmit($event)"></app-regex-input> <br><br>
-<app-string-input (stringEmit)="getstringEmit($event)" ></app-string-input>
-
-Did the expression match? {{isMatched}}
+<div class="container">
+	<h1>Find Regex Value</h1>
+	<app-regex-input (regexEmit)="getregexEmit($event)"></app-regex-input>
+	<app-string-input (stringEmit)="getstringEmit($event)"></app-string-input>
+	<div>
+		Did the expression match? {{isMatched}}
+	</div>
+	<div>
+		Matched Values are : <mark>{{matched}}</mark>
+	</div>
+</div>

@@ -18,7 +18,7 @@
     "angular-aria": "1.7.9",
     "angular-material": "1.1.21",
     "angular-messages": "1.7.9",
-    "bootstrap": "4.4.1",
+    "bootstrap": "^4.4.1",
     "core-js": "2.6.11",
     "jquery": "3.4.1",
     "popper.js": "1.16.1",

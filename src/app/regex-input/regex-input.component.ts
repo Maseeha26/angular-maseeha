@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, SimpleChanges, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
 @Component({
@@ -8,15 +8,14 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./regex-input.component.css']
 })
 export class RegexInputComponent implements OnInit {
- regexForm: FormGroup;
+  regexForm: FormGroup;
   constructor(private fb: FormBuilder) { }
   @Output() regexEmit = new EventEmitter();
   ngOnInit() {
-     this.regexForm = this.fb.group({
-    regexValue: ['', Validators.required]
- });
+    this.regexForm = this.fb.group({
+      regexValue: ['', Validators.required]
+    });
   }
-
 
   sendRegexString(message: string) {
     this.regexEmit.emit(message);
