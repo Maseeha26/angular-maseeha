@@ -8,7 +8,6 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./string-input.component.css']
 })
 export class StringInputComponent implements OnInit {
-  public message = "A regular expression is a sequence of characters that forms a search pattern."
 
   stringForm: FormGroup;
   constructor(private fb: FormBuilder) { }
@@ -16,9 +15,8 @@ export class StringInputComponent implements OnInit {
 
   ngOnInit() {
       this.stringForm = this.fb.group({
-      stringValue: [this.message, Validators.required]
+      stringValue: ['', Validators.required]
     });
-    this.stringEmit.emit(this.message);
   }
 
   sendString(message: string) {
