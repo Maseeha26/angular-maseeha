@@ -24,7 +24,6 @@ export class AppComponent {
   }
 
   getMatchedValue() {
-    debugger;
     if (this.receivedRegexMessage) {
       let params = this.receivedRegexMessage.split('/')
       let regex = new RegExp(params[1], params[2]);
