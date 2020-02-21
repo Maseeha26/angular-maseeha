@@ -6,7 +6,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./string-input.component.css']
 })
 export class StringInputComponent implements OnInit {
-  public message = "Hello Code and Test World!";
+  public message = "A regular expression is a sequence of characters that forms a search pattern."
+
   constructor() { }
   @Output() stringEmit = new EventEmitter()
 
