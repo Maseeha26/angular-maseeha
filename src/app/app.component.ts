@@ -29,8 +29,10 @@ export class AppComponent {
       let params = this.receivedRegexMessage.split('/')
       var regex = new RegExp(params[1], params[2]);
       let matched = this.receivedStringMessage.match(regex);
+      let testMatched = regex.test(this.receivedStringMessage);
+      console.log("testMatched", + testMatched);
       console.log("matched " + matched);
-      this.isMatched = matched;
+      this.isMatched = (testMatched)? "Matched": "NotMatched";
     } catch (Exception) {
       this.isMatched = "Not Matched";
     }
