@@ -30,8 +30,9 @@ export class AppComponent {
       let params = this.receivedRegexMessage.split('/')
       var regex = new RegExp(params[1], params[2]);
       let matched = this.receivedStringMessage.match(regex);
+       console.log("matched " + matched);
       console.log(regex.test(this.receivedStringMessage))
-      if (regex.test(this.receivedStringMessage)) {
+      if (matched) {
         this.isMatched = "Matched";
       } else {
         this.isMatched = "Not Matched";
