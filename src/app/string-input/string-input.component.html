@@ -1,6 +1,6 @@
 <form [formGroup]="stringForm" class="format">
 <div class="format">
-	<textarea rows="10" cols="40" (keyup)="sendString($event.target.value)" formControlName="stringValue"  placeholder="Enter a Text">{{message}}
+	<textarea rows="10" cols="40" (keydown)="sendString($event.target.value)" formControlName="stringValue"  placeholder="Enter a Text">{{message}}
 </textarea>
 	<div class="danger-class"
 		*ngIf="!stringForm.controls['stringValue'].valid && stringForm.controls['stringValue'].touched">

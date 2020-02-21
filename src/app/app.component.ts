@@ -30,7 +30,7 @@ export class AppComponent {
         let params = this.receivedRegexMessage.split('/')
         let regex = new RegExp(params[1], params[2]);
         this.matched = this.receivedStringMessage.match(regex);
-        if (this.matched) {
+        if (regex.test(this.receivedStringMessage) && this.receivedRegexMessage) {
           this.isMatched = "Matched";
         } else {
           this.isMatched = "Not Matched";
