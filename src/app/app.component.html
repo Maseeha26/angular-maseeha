@@ -1,9 +1,9 @@
 <div class="container">
-	<h1>Find a Regex Value</h1>
+	<h1>Regex Finder!</h1>
 	<app-regex-input (regexEmit)="getregexEmit($event)"></app-regex-input>
 	<app-string-input (stringEmit)="getstringEmit($event)"></app-string-input>
 	<div class="format">
-		Did the expression match? {{isMatched}}
+		Did the expression match? <span [ngStyle]="{'background-color': (isMatched === 'Matched') ? 'green' : 'red' }">{{isMatched}} </span>
 	</div>
 	<div class="format">
 		Matched Values are : <mark>{{matched}}</mark>
