@@ -13,7 +13,7 @@ export class RegexInputComponent implements OnInit {
   @Output() regexEmit = new EventEmitter();
   ngOnInit() {
      this.regexForm = this.fb.group({
-    regexValue: ['', Validators.pattern]
+    regexValue: ['', Validators.required]
  });
   }
 

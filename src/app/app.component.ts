@@ -21,20 +21,30 @@ export class AppComponent {
   getstringEmit(message: string) {
     this.receivedStringMessage = message;
     console.log(this.receivedStringMessage);
+    this.getMatchedValue();
   }
 
   getMatchedValue() {
     debugger;
-    try {
       let params = this.receivedRegexMessage.split('/')
       var regex = new RegExp(params[1], params[2]);
       let matched = this.receivedStringMessage.match(regex);
-      let testMatched = regex.test(this.receivedStringMessage);
-      console.log("testMatched", + testMatched);
-      console.log("matched " + matched);
-      this.isMatched = (testMatched)? "Matched": "NotMatched";
-    } catch (Exception) {
+      console.log(regex.test(this.receivedStringMessage))
+    if(regex.test(this.receivedStringMessage)) {
+      this.isMatched = "Matched";
+    } else {
       this.isMatched = "Not Matched";
     }
+    // try {
+    //   let params = this.receivedRegexMessage.split('/')
+    //   var regex = new RegExp(params[1], params[2]);
+    //   let matched = this.receivedStringMessage.match(regex);
+    //   let testMatched = regex.test(this.receivedStringMessage);
+    //   console.log("testMatched", + testMatched);
+    //   console.log("matched " + matched);
+    //   this.isMatched = (testMatched)? "Matched": "NotMatched";
+    // } catch (Exception) {
+    //   this.isMatched = "Not Matched";
+    // }
   }
 }
