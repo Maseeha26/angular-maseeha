@@ -15,13 +15,11 @@ export class AppComponent {
 
   getregexEmit(message: string) {
     this.receivedRegexMessage = message;
-    console.log(this.receivedRegexMessage);
     this.getMatchedValue();
   }
 
   getstringEmit(message: string) {
     this.receivedStringMessage = message;
-    console.log(this.receivedStringMessage);
     this.getMatchedValue();
   }
 
@@ -31,8 +29,6 @@ export class AppComponent {
       let params = this.receivedRegexMessage.split('/')
       let regex = new RegExp(params[1], params[2]);
       this.matched = this.receivedStringMessage.match(regex);
-      console.log("matched " + this.matched);
-      console.log(regex.test(this.receivedStringMessage))
       if (this.matched) {
         this.isMatched = "Matched";
       } else {
