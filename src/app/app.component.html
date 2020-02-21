@@ -5,7 +5,7 @@
 	<div class="format">
 		Did the expression match? <span [ngStyle]="{'color': (isMatched === 'Matched') ? 'green' : 'red' }">{{isMatched}} </span>
 	</div>
-	<div class="format">
+	<div class="format" *ngIf="matched">
 		Matched Values are : <mark>{{matched}}</mark>
 	</div>
 </div>
